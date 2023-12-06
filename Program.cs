@@ -39,16 +39,17 @@ namespace TSP_Group
             cities.Add(city13);
             cities.Add(city14);
 
-
-            List<int> distances = new List<int>();
-            BigInteger num = 87_178_291_200;
-            for (BigInteger i = 0; i < num; i++)
-            {
+            //BigInteger num = 87_178_291_200;
+            //for (BigInteger i = 0; i < num; i++)
+            //{
                 BruteForce bf = new BruteForce(cities);
-                distances.Add(bf.bruteForceAlgo());
+                List<int> shortestPath = bf.SolveBF();
+                foreach(int shortestPathItem in shortestPath)
+            {
+                Console.WriteLine(shortestPathItem);
             }
-            distances.Sort();
-            Console.WriteLine(distances[0]);
+            //}
+
 
 
 
