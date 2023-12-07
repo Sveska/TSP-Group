@@ -44,9 +44,10 @@ namespace TSP_Group
             Console.WriteLine("Shortest Distance: " + bf.shortestDistance);
             Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));*/
 
-            ParallelBruteForce pbf = new ParallelBruteForce(cities);
-            pbf.SolveParallelBF();
+            /*ParallelBruteForce pbf = new ParallelBruteForce(cities);
+            pbf.SolveParallelBF();*/
 
+            
         }
     }
 }

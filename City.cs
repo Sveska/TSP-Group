@@ -33,7 +33,6 @@ namespace TSP_Group
             string info = string.Empty;
 
             info += name;
-            //info += "------------------";
 
             return info;
         }
