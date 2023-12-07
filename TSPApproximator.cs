@@ -6,7 +6,14 @@ namespace TSP_Group
 {
     internal class TspApproximator
     {
-        public List<City> ApproximateTspTour(List<City> cities)
+        private readonly List<City> cities;
+
+        public TspApproximator(List<City> cities)
+        {
+            this.cities = cities;
+        }
+
+        public List<City> ApproximateTspTour()
         {
             City root = cities[0];
             var mst = ComputeMst(cities, root);
@@ -25,12 +32,10 @@ namespace TSP_Group
             var priorityQueue = new PriorityQueue<City, int>();
             var added = cities.ToDictionary(city => city, city => false);
 
-            // Initialize with root city
             priorityQueue.Enqueue(root, 0);
 
             while (priorityQueue.Count > 0)
             {
-                // Dequeue the next city
                 var currentCity = priorityQueue.Dequeue();
 
                 if (added[currentCity])
