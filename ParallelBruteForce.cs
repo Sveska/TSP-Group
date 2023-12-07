@@ -30,7 +30,10 @@ namespace TSP_Group
             totalCities = cities.Count;
             shortestPath = new List<int>();
         }
-
+        /// <summary>
+        /// uses parallelization to bruteforce the TSP problem
+        /// </summary>
+        /// <returns>the shortest path determined by the algorithm</returns>
         public List<int> SolveParallelBF()
         {
             List<int> initialPath = new List<int> { 0 };

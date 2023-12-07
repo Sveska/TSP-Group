@@ -40,7 +40,7 @@ namespace TSP_Group
         }
 
         /// <summary>
-        /// computes the minimum spanning tree with the list of cities given
+        /// uses prim's algorithm to compute the minimum spanning tree with the list of cities given
         /// </summary>
         /// <param name="cities"></param>
         /// <param name="root"></param>
