@@ -1,4 +1,15 @@
-﻿using System;
+﻿         /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //                                                                                                     //
+       // Project: TSP Group Project                                                                          //
+      // File Name: BruteForce                                                                               //
+     // Course: CSCI 3230 – Algorithms                                                                      //
+    // Authors: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler              //
+   // Created: Wednesday, December 5, 2023                                                                //
+  // Copyright: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler, 2023      //
+ //                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -19,12 +30,20 @@ namespace TSP_Group
 
         public int shortestDistance = int.MaxValue;
 
+        /// <summary>
+        /// default constructor
+        /// </summary>
+        /// <param name="cities">a list of cities for the brute force algorithm to process</param>
         public BruteForce(List<City> cities)
         {
             this.cities = cities;
             totalCities = cities.Count;
         }
 
+        /// <summary>
+        /// Uses the CalculateShortestPath method to find the shortest possible path with the algorithm provided
+        /// </summary>
+        /// <returns>a list containing the shortest path</returns>
         public List<int> SolveBF()
         {
             shortestPath = new List<int>();
@@ -45,6 +64,12 @@ namespace TSP_Group
             return shortestPath;
         }
 
+        /// <summary>
+        /// Determines the shortest available path using as few optimization methods as possible
+        /// </summary>
+        /// <param name="currentPath"></param>
+        /// <param name="visited">The list of every node currently traversed</param>
+        /// <param name="currentLength"></param>
         private void CalculateShortestPath(List<int> currentPath, List<bool> visited, int currentLength)
         {
             if(currentPath.Count == totalCities)

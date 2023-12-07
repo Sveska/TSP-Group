@@ -1,4 +1,15 @@
-﻿using System.Collections.Generic;
+﻿         /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //                                                                                                     //
+       // Project: TSP Group Project                                                                          //
+      // File Name: Main                                                                                     //
+     // Course: CSCI 3230 – Algorithms                                                                      //
+    // Authors: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler              //
+   // Created: Wednesday, December 5, 2023                                                                //
+  // Copyright: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler, 2023      //
+ //                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace TSP_Group
@@ -7,6 +18,7 @@ namespace TSP_Group
     {
         static void Main(string[] args)
         {
+            //List of all the cities given in the spec were hardcoded into the program
             List<City> cities = new List<City>
             {
                 new City("0", 0, 0),
@@ -26,12 +38,15 @@ namespace TSP_Group
                 new City("n", -9860, 1311)
             };
 
-
+            //I've added a video called TSP Bruteforce to the repository, this video demonstrates the maximum number of
+            //cities (12) that can be visited within two minutes on my desktop
             /*BruteForce bf = new BruteForce(cities);
             List<int> shortestPath = bf.SolveBF();
             Console.WriteLine("Shortest Distance: " + bf.shortestDistance);
             Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));*/
 
+            //I've added a video called TSP ParallelBruteforce to the repository, this video demonstrates the maximum number of
+            //cities (13) that can be visited within two minutes on my desktop
             /*ParallelBruteForce pbf = new ParallelBruteForce(cities);
             pbf.SolveParallelBF();*/
 

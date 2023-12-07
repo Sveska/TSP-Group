@@ -1,4 +1,15 @@
-﻿using System;
+﻿         /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //                                                                                                     //
+       // Project: TSP Group Project                                                                          //
+      // File Name: ParallelBruteForce                                                                       //
+     // Course: CSCI 3230 – Algorithms                                                                      //
+    // Authors: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler              //
+   // Created: Wednesday, December 6, 2023                                                                //
+  // Copyright: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler, 2023      //
+ //                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
