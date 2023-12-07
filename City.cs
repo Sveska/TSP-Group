@@ -10,24 +10,12 @@ namespace TSP_Group
     {
         public int x { get; set; }
         public int y { get; set; }
-        public bool visited { get; set; }
 
 
         public City(int x, int y, bool visited)
         {
             this.x = x;
             this.y = y;
-            this.visited = visited;
-        }
-
-        // if TSP has been to city this method will be called
-        internal void Visit()
-        {
-           visited = true;
-        }
-        internal void ResetVisit()
-        {
-            visited = false;
         }
 
         // distance between two cities formula

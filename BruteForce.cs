@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,6 +10,7 @@ namespace TSP_Group
 {
     internal class BruteForce
     {
+        int counter = 0;
         Random random = new Random();
 
         private int totalCities;
@@ -40,22 +42,30 @@ namespace TSP_Group
 
             CalculateShortestPath(currentPath, visited, 0);
 
+            foreach (var index in shortestPath)
+            {
+                Console.WriteLine($"City visited: {cities[index].x},{cities[index].y}");
+            }
+
             return shortestPath;
 
         }
         private void CalculateShortestPath(List<int> currentPath, List<bool> visited, int currentLength)
         {
-            Console.WriteLine("\tloading...\t");
-            // calculate distance from last city to origin
-            int originToLastCityDistance = cities[currentPath.Last()].DistanceTo(new City(0, 0, false));
-            int totalDistance = currentLength = currentLength + originToLastCityDistance; ;
-
-            // check if the total distance is shorter than the current shortest distance
-            if (totalDistance < shortestDistance)
+            if (currentPath.Count == totalCities)
             {
-                shortestDistance = totalDistance;
-                shortestPath = new List<int>(currentPath);
+                // Calculate distance from last city to origin
+                int originToLastCityDistance = cities[currentPath.Last()].DistanceTo(cities[0]);
+                int totalDistance = currentLength + originToLastCityDistance;
+
+                if (totalDistance < shortestDistance)
+                {
+                    shortestDistance = totalDistance;
+                    shortestPath = new List<int>(currentPath);
+                }
+                return;
             }
+
             for (int i = 0; i < totalCities; i++)
             {
                 if (!visited[i])
@@ -66,16 +76,12 @@ namespace TSP_Group
                     visited[i] = true;
                     currentPath.Add(i);
 
-
                     CalculateShortestPath(currentPath, visited, currentLength + distanceToNextCity);
 
-                    // Backtrack
                     visited[i] = false;
                     currentPath.RemoveAt(currentPath.Count - 1);
                 }
             }
-            return;
         }
-
     }
 }
