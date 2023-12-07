@@ -10,6 +10,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Numerics;
 
 namespace TSP_Group
@@ -21,7 +22,6 @@ namespace TSP_Group
             //List of all the cities given in the spec were hardcoded into the program
             List<City> cities = new List<City>
             {
-                new City("0", 0, 0),
                 new City("a", -3138, -2512),
                 new City("b", 6804, -1072),
                 new City("c", -193, 8782),
@@ -40,18 +40,31 @@ namespace TSP_Group
 
             //I've added a video called TSP Bruteforce to the repository, this video demonstrates the maximum number of
             //cities (12) that can be visited within two minutes on my desktop
+            Stopwatch sw = Stopwatch.StartNew();
             /*BruteForce bf = new BruteForce(cities);
             List<int> shortestPath = bf.SolveBF();
             Console.WriteLine("Shortest Distance: " + bf.shortestDistance);
-            Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));*/
+            Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));
+            sw.Stop();
+            Console.WriteLine(sw);*/
+
 
             //I've added a video called TSP ParallelBruteforce to the repository, this video demonstrates the maximum number of
             //cities (13) that can be visited within two minutes on my desktop
-            /*ParallelBruteForce pbf = new ParallelBruteForce(cities);
-            pbf.SolveParallelBF();*/
+            /*sw.Restart();
+            sw.Start();
+            ParallelBruteForce pbf = new ParallelBruteForce(cities);
+            pbf.SolveParallelBF();
+            sw.Stop();
+            Console.WriteLine(sw);*/
 
+            sw.Restart();
+            sw.Start();
             TspApproximator approx = new TspApproximator(cities);
             approx.ApproximateTspTour();
+            sw.Stop();
+            Console.WriteLine(sw);
+            StreamWriter output = new StreamWriter("Bruteforce output.txt");
         }
     }
 }

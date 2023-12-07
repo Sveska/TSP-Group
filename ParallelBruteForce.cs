@@ -8,7 +8,10 @@
   // Copyright: Scotty Snyder, Zachary Sveska, Andrew Garcia, Chris Cleveland, Matthew Beeler, 2023      //
  //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// usees Task Parallel Library in .NET to parallelize the computation
+// recursion with path calculation
+// program uses a lock lockObj to ensure thread safety when updating shortest DIstance and shortestPath
+// recursive calls make new instances of the path newPAth and visited list newVisited for each recursive call
 using System;
 using System.Collections.Generic;
 using System.Linq;
