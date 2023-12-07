@@ -6,7 +6,7 @@ namespace TSP_Group
 {
     internal class TspApproximator
     {
-        private readonly List<City> cities;
+        public readonly List<City> cities;
 
         public TspApproximator(List<City> cities)
         {
@@ -52,6 +52,11 @@ namespace TSP_Group
                         priorityQueue.Enqueue(neighbor, distance);
                     }
                 }
+            }
+
+            foreach(var index in mst)
+            {
+                Console.WriteLine($"City visited: {index.x},{index.y}" + " " + index);
             }
 
             return mst;
