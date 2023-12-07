@@ -18,10 +18,10 @@ namespace TSP_Group
             City city7 = new City("g", -7005, 2118);
             City city8 = new City("h", 7775, -8002);
             City city9 = new City("i", 4244, -1339);
-            //City city10 = new City("j", 9478, -1973);
-            //City city11 = new City("k", -7795, -5000);
-            //City city12 = new City("l", -4521, 1266);
-            //City city13 = new City("m", -192, 3337);
+            City city10 = new City("j", 9478, -1973);
+            City city11 = new City("k", -7795, -5000);
+            City city12 = new City("l", -4521, 1266);
+            City city13 = new City("m", -192, 3337);
             //City city14 = new City("n", -9860, 1311);
 
             cities.Add(city1);
@@ -33,14 +33,20 @@ namespace TSP_Group
             cities.Add(city7);
             cities.Add(city8);
             cities.Add(city9);
-            //cities.Add(city10);
-            //cities.Add(city11);
-            //cities.Add(city12);
-            //cities.Add(city13);
+            cities.Add(city10);
+            cities.Add(city11);
+            cities.Add(city12);
+            cities.Add(city13);
             //cities.Add(city14);
 
-            BruteForce bf = new BruteForce(cities);
+            /*BruteForce bf = new BruteForce(cities);
             List<int> shortestPath = bf.SolveBF();
+            Console.WriteLine("Shortest Distance: " + bf.shortestDistance);
+            Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));*/
+
+            ParallelBruteForce pbf = new ParallelBruteForce(cities);
+            pbf.SolveParallelBF();
+
         }
     }
 }

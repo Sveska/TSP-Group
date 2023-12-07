@@ -15,9 +15,9 @@ namespace TSP_Group
 
         private List<City> cities { get; set; }
 
-        private List<int> shortestPath;
+        public List<int> shortestPath;
 
-        private int shortestDistance = int.MaxValue;
+        public int shortestDistance = int.MaxValue;
 
         public BruteForce(List<City> cities)
         {
@@ -47,13 +47,6 @@ namespace TSP_Group
 
         private void CalculateShortestPath(List<int> currentPath, List<bool> visited, int currentLength)
         {
-
-            Console.WriteLine("Current Path: " + string.Join(" -> ", currentPath.Select(cityIndex => cities[cityIndex].ToString())));
-            Console.WriteLine("Current Length: " + currentLength);
-            Console.WriteLine("Shortest Distance: " + shortestDistance);
-            Console.WriteLine("Shortest Path: " + string.Join(" -> ", shortestPath.Select(cityIndex => cities[cityIndex].ToString())));
-            Console.WriteLine(counter++);
-
             if(currentPath.Count == totalCities)
             {
                 // Calculate distance from last city to origin
