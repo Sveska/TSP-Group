@@ -60,6 +60,11 @@ namespace TSP_Group
                 }
             }
 
+            foreach(var index in mst)
+            {
+                Console.WriteLine($"City visited: {index.x},{index.y}" + " " + index);
+            }
+
             return mst;
         }
 

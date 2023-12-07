@@ -22,7 +22,7 @@ namespace TSP_Group
             City city11 = new City("k", -7795, -5000);
             City city12 = new City("l", -4521, 1266);
             City city13 = new City("m", -192, 3337);
-            //City city14 = new City("n", -9860, 1311);
+            City city14 = new City("n", -9860, 1311);
 
             cities.Add(city1);
             cities.Add(city2);
@@ -37,7 +37,7 @@ namespace TSP_Group
             cities.Add(city11);
             cities.Add(city12);
             cities.Add(city13);
-            //cities.Add(city14);
+            cities.Add(city14);
 
             /*BruteForce bf = new BruteForce(cities);
             List<int> shortestPath = bf.SolveBF();
@@ -47,7 +47,8 @@ namespace TSP_Group
             /*ParallelBruteForce pbf = new ParallelBruteForce(cities);
             pbf.SolveParallelBF();*/
 
-            
+            TspApproximator approx = new TspApproximator(cities);
+            approx.ApproximateTspTour();
         }
     }
 }
