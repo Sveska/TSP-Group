@@ -39,6 +39,12 @@ namespace TSP_Group
             return preorderWalk;
         }
 
+        /// <summary>
+        /// computes the minimum spanning tree with the list of cities given
+        /// </summary>
+        /// <param name="cities"></param>
+        /// <param name="root"></param>
+        /// <returns></returns>
         private List<City> ComputeMst(List<City> cities, City root)
         {
             var mst = new List<City>();
@@ -80,6 +86,13 @@ namespace TSP_Group
             return mst;
         }
 
+        /// <summary>
+        /// visits each city in pre-order traversal
+        /// </summary>
+        /// <param name="city"></param>
+        /// <param name="mst"></param>
+        /// <param name="visited"></param>
+        /// <param name="walk">the order in which the program will ultimately follow when calling ApproximateTspTour</param>
         private void PreorderWalk(City city, List<City> mst, HashSet<City> visited, List<City> walk)
         {
             visited.Add(city);
