@@ -7,10 +7,12 @@ namespace TSP_Group
     internal class TspApproximator
     {
         private readonly List<City> cities;
+        public double TotalDistance { get; private set; }
 
         public TspApproximator(List<City> cities)
         {
             this.cities = cities;
+            TotalDistance = 0;
         }
 
         public List<City> ApproximateTspTour()
@@ -50,6 +52,10 @@ namespace TSP_Group
                     {
                         var distance = currentCity.DistanceTo(neighbor);
                         priorityQueue.Enqueue(neighbor, distance);
+                        if (currentCity != root) // Add distance when connecting to the MST
+                        {
+                            TotalDistance += distance;
+                        }
                     }
                 }
             }
