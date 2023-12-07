@@ -33,8 +33,10 @@ namespace TSP_Group
             var mst = new List<City>();
             var priorityQueue = new PriorityQueue<City, int>();
             var added = cities.ToDictionary(city => city, city => false);
+            var nearestDistances = new Dictionary<City, int>();
 
             priorityQueue.Enqueue(root, 0);
+            nearestDistances[root] = 0;
 
             while (priorityQueue.Count > 0)
             {
@@ -46,23 +48,24 @@ namespace TSP_Group
                 added[currentCity] = true;
                 mst.Add(currentCity);
 
+                // Update and display TotalDistance when a city is added
+                TotalDistance += nearestDistances[currentCity];
+                Console.WriteLine($"City {currentCity} added to MST. Distance traveled: {TotalDistance}");
+
                 foreach (var neighbor in cities)
                 {
                     if (!added[neighbor])
                     {
                         var distance = currentCity.DistanceTo(neighbor);
-                        priorityQueue.Enqueue(neighbor, distance);
-                        if (currentCity != root) // Add distance when connecting to the MST
+                        if (!nearestDistances.ContainsKey(neighbor) || distance < nearestDistances[neighbor])
                         {
-                            TotalDistance += distance;
+                            nearestDistances[neighbor] = distance;
+                            priorityQueue.Enqueue(neighbor, distance);
                         }
                     }
                 }
             }
-            foreach (var index in mst)
-            {
-                Console.WriteLine($"City visited: {index.x},{index.y}" + " " + index + " " + TotalDistance);
-            }
+
             return mst;
         }
 
