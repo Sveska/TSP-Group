@@ -1,0 +1,16 @@
+City a added to MST. Distance traveled: 0
+City l added to MST. Distance traveled: 4023
+City d added to MST. Distance traveled: 5538
+City g added to MST. Distance traveled: 7446
+City n added to MST. Distance traveled: 10412
+City f added to MST. Distance traveled: 14647
+City e added to MST. Distance traveled: 16796
+City k added to MST. Distance traveled: 17954
+City m added to MST. Distance traveled: 22752
+City c added to MST. Distance traveled: 28197
+City i added to MST. Distance traveled: 34642
+City b added to MST. Distance traveled: 37215
+City j added to MST. Distance traveled: 40036
+City h added to MST. Distance traveled: 46300
+
+00:00:00.0174582

@@ -1,0 +1,15 @@
+City visited: -3138,-2512 0
+City visited: 7775,-8002 7
+City visited: 9478,-1973 9
+City visited: 6804,-1072 1
+City visited: 4244,-1339 8
+City visited: -192,3337 12
+City visited: -193,8782 2
+City visited: -5168,2636 3
+City visited: -4521,1266 11
+City visited: -7005,2118 6
+City visited: -9955,-2923 5
+City visited: -8022,-3864 4
+City visited: -7795,-5000 10
+
+00:01:07.9256600

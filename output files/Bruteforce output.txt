@@ -1,0 +1,16 @@
+City visited: -3138,-2512
+City visited: 7775,-8002
+City visited: 9478,-1973
+City visited: 6804,-1072
+City visited: 4244,-1339
+City visited: -193,8782
+City visited: -5168,2636
+City visited: -4521,1266
+City visited: -7005,2118
+City visited: -9955,-2923
+City visited: -8022,-3864
+City visited: -7795,-5000
+
+Shortest Distance: 61398
+Shortest Path: a -> h -> j -> b -> i -> c -> d -> l -> g -> f -> e -> k
+00:00:20.9858412
