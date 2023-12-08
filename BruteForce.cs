@@ -20,8 +20,6 @@ namespace TSP_Group
 {
     internal class BruteForce
     {
-        int counter = 0;
-
         private int totalCities;
 
         private List<City> cities { get; set; }
